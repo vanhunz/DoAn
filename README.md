@@ -11,7 +11,8 @@ Database được khởi tạo từ file script `.sql` để dễ dàng chia s�
 ### 1 Clone project về máy
 Mở terminal / git bash và chạy lệnh:
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
+git clone https://github.com/vanhunz/DoAn
+git clone 
 ````
 
 Sau đó mở project bằng **Visual Studio 2022**.
