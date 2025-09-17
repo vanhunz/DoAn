@@ -1,14 +1,7 @@
-﻿-- Chọn đúng database Database1.mdf
-USE [Database1];
-GO
-
--- Bảng Vai trò
 CREATE TABLE VaiTro (
     MaVaiTro INT PRIMARY KEY IDENTITY(1,1),
     TenVaiTro NVARCHAR(50) NOT NULL
 );
-
--- Bảng Người dùng
 CREATE TABLE NguoiDung (
     MaND INT PRIMARY KEY IDENTITY(1,1),
     TenDangNhap NVARCHAR(50) UNIQUE NOT NULL,
@@ -20,8 +13,6 @@ CREATE TABLE NguoiDung (
     MaVaiTro INT NOT NULL,
     FOREIGN KEY (MaVaiTro) REFERENCES VaiTro(MaVaiTro)
 );
-
--- Bảng Hàng hóa
 CREATE TABLE HangHoa (
     MaHang INT PRIMARY KEY IDENTITY(1,1),
     TenHang NVARCHAR(100) NOT NULL,
@@ -30,8 +21,6 @@ CREATE TABLE HangHoa (
     GiaXuat DECIMAL(18,2),
     SoLuongTon INT DEFAULT 0
 );
-
--- Bảng Phiếu nhập
 CREATE TABLE PhieuNhap (
     MaPhieuNhap INT PRIMARY KEY IDENTITY(1,1),
     NgayNhap DATETIME DEFAULT GETDATE(),
@@ -39,8 +28,6 @@ CREATE TABLE PhieuNhap (
     GhiChu NVARCHAR(200),
     FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND)
 );
-
--- Bảng Chi tiết nhập
 CREATE TABLE ChiTietNhap (
     ID INT PRIMARY KEY IDENTITY(1,1),
     MaPhieuNhap INT NOT NULL,
@@ -59,8 +46,6 @@ CREATE TABLE PhieuXuat (
     GhiChu NVARCHAR(200),
     FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND)
 );
-
--- Bảng Chi tiết xuất
 CREATE TABLE ChiTietXuat (
     ID INT PRIMARY KEY IDENTITY(1,1),
     MaPhieuXuat INT NOT NULL,
@@ -70,3 +55,4 @@ CREATE TABLE ChiTietXuat (
     FOREIGN KEY (MaPhieuXuat) REFERENCES PhieuXuat(MaPhieuXuat),
     FOREIGN KEY (MaHang) REFERENCES HangHoa(MaHang)
 );
+
