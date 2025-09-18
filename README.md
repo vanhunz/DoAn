@@ -65,4 +65,4 @@ Trong file `Web.config`, chỉnh lại `connectionStrings` nếu LocalDB khác t
 
 ## 📧 Liên hệ
 
-Nếu có vấn đề khi chạy project, vui lòng liên hệ: vovanhuanhjhj@gmail.com hoặc za.lo 0397199215
+Nếu có vấn đề khi chạy project, vui lòng liên hệ: vovanhuanhjhj@gmail.com hoặc za.lo 0397199215( Ưu tiên )
