@@ -80,10 +80,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="QuanLyNguoiDung.xaml.cs">
-      <DependentUpon>QuanLyNguoiDung.xaml</DependentUpon>
+    <Compile Include="Model\ChiTietNhap.cs">
+      <DependentUpon>ThucPhamModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyNhapKho.xaml.cs">
+    <Compile Include="Model\ChiTietXuat.cs">
+      <DependentUpon>ThucPhamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HangHoa.cs">
+      <DependentUpon>ThucPhamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NguoiDung.cs">
+      <DependentUpon>ThucPhamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhieuNhap.cs">
+      <DependentUpon>ThucPhamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhieuXuat.cs">
+      <DependentUpon>ThucPhamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\NguoiDungModelView.cs" />
+    <Compile Include="View\QuanLyNhapKho.xaml.cs">
       <DependentUpon>QuanLyNhapKho.xaml</DependentUpon>
     </Compile>
     <Compile Include="QuanLyThongTinHangHoa.xaml.cs">
@@ -95,7 +111,28 @@
     <Compile Include="TheoDoiTonKho.xaml.cs">
       <DependentUpon>TheoDoiTonKho.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Model\ThucPhamModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThucPhamModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThucPhamModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThucPhamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThucPhamModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThucPhamModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\VaiTro.cs">
+      <DependentUpon>ThucPhamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyNguoiDung.xaml.cs">
+      <DependentUpon>QuanLyNguoiDung.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -103,15 +140,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="QuanLyNguoiDung.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="QuanLyNhapKho.xaml">
+    <Page Include="View\QuanLyNhapKho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TheoDoiTonKho.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuanLyNguoiDung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +188,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="Model\ThucPhamModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ThucPhamModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ThucPhamModel.edmx.diagram">
+      <DependentUpon>ThucPhamModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -171,12 +215,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="Model\ThucPhamModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ThucPhamModel.edmx</DependentUpon>
+      <LastGenOutput>ThucPhamModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="Model\ThucPhamModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ThucPhamModel.edmx</DependentUpon>
+      <LastGenOutput>ThucPhamModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
