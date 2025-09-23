@@ -102,13 +102,13 @@
     <Compile Include="View\QuanLyNhapKho.xaml.cs">
       <DependentUpon>QuanLyNhapKho.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyThongTinHangHoa.xaml.cs">
+    <Compile Include="View\QuanLyThongTinHangHoa.xaml.cs">
       <DependentUpon>QuanLyThongTinHangHoa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyXuatKho.xaml.cs">
+    <Compile Include="View\QuanLyXuatKho.xaml.cs">
       <DependentUpon>QuanLyXuatKho.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TheoDoiTonKho.xaml.cs">
+    <Compile Include="View\TheoDoiTonKho.xaml.cs">
       <DependentUpon>TheoDoiTonKho.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\ThucPhamModel.Context.cs">
@@ -148,15 +148,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="QuanLyThongTinHangHoa.xaml">
+    <Page Include="View\QuanLyThongTinHangHoa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="QuanLyXuatKho.xaml">
+    <Page Include="View\QuanLyXuatKho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TheoDoiTonKho.xaml">
+    <Page Include="View\TheoDoiTonKho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,6 +225,9 @@
       <DependentUpon>ThucPhamModel.edmx</DependentUpon>
       <LastGenOutput>ThucPhamModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Huan\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

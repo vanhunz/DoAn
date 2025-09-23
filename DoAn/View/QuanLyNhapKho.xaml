@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoAn"
         mc:Ignorable="d"
-        Title="QuanLyNhapKho" Height="450" Width="800">
+        Title="QuanLyNhapKho" Height="550" Width="800">
     <Grid>
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
@@ -17,7 +17,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <!-- Nhập thông tin phiếu nhập -->
+            <!-- Nhập thông tin phiếu nhập vanhuan -->
             <GroupBox Header="Thông tin nhập kho" Margin="10,10,9.6,9.8" Grid.ColumnSpan="2">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
