@@ -28,5 +28,10 @@ namespace DoAn.View
         {
 
         }
+
+        private void Btn_Add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
