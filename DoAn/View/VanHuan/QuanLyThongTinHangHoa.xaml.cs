@@ -76,7 +76,6 @@ namespace DoAn
         }
         private void CopyFolderToOutput(string sourceFolder)
         {
-            // Thư mục xuất ra: bin/Debug/Images
             string targetFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.GetFileName(sourceFolder));
 
             if (!Directory.Exists(sourceFolder))
@@ -84,8 +83,6 @@ namespace DoAn
                 MessageBox.Show($"Không tìm thấy folder ảnh gốc: {sourceFolder}");
                 return;
             }
-
-            // Nếu thư mục target chưa tồn tại thì tạo
             if (!Directory.Exists(targetFolder))
                 Directory.CreateDirectory(targetFolder);
 
