@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DoAn"
+        xmlns:conv="clr-namespace:DoAn.Converters"
         mc:Ignorable="d"
         Title="QuanLyThongTinHangHoa" Height="650" Width="1100">
     <Window.Resources>
@@ -11,6 +11,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles1.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <conv:ImagePathConverter x:Key="ImagePathConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel>
@@ -132,62 +133,36 @@
                             </Grid>
                         </GroupBox>
                     </StackPanel>
-                    <ListView x:Name="lvHangHoa" Grid.Row="1" Grid.Column="1"
-          Margin="10"
-          ItemsSource="{Binding}">
+                    <ListView x:Name="lvHangHoa" Grid.Row="0"
+                  HorizontalContentAlignment="Stretch"
+                  VerticalContentAlignment="Stretch">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" />
+                                <UniformGrid Columns="2" Rows="2"/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
 
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <Border BorderBrush="#ddd" BorderThickness="1" 
-        CornerRadius="10" 
-        Margin="10" 
-        Width="300" Height="250" 
-        Background="White" 
-        Padding="10">
+                                <Border BorderBrush="#ddd" BorderThickness="1" CornerRadius="10" Margin="10" Background="White" Padding="10">
                                     <Border.Effect>
                                         <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.3"/>
                                     </Border.Effect>
-
                                     <StackPanel>
-                                        <!-- Ảnh -->
-                                        <Image Source="{Binding Anh}" Height="120" Stretch="UniformToFill" Margin="0,0,0,10" />
-
-                                        <!-- Tên -->
-                                        <TextBlock Text="{Binding TenHang}" 
-                   FontWeight="Bold" 
-                   FontSize="16" 
-                   Margin="0,0,0,5"/>
-
-                                        <!-- Doanh thu -->
-                                        <TextBlock Text="{Binding GiaXuat, StringFormat=Doanh thu: {0:C}}" 
-                   Foreground="Black" Margin="0,0,0,5"/>
-
-                                        <!-- Thời hạn -->
-                                        <TextBlock Text="{Binding ThoiHan, StringFormat=Thời hạn: {0:yyyy-MM-dd}}" 
-                   FontWeight="Bold" Margin="0,0,0,5"/>
-
-                                        <!-- Views, Likes, Comments -->
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
-                                            <TextBlock Text="👁" Margin="0,0,5,0"/>
-                                            <TextBlock Text="{Binding Views}" Margin="0,0,10,0"/>
-
-                                            <TextBlock Text="👍" Margin="0,0,5,0"/>
-                                            <TextBlock Text="{Binding Likes}" Margin="0,0,10,0"/>
-
-                                            <TextBlock Text="💬" Margin="0,0,5,0"/>
-                                            <TextBlock Text="{Binding Comments}" />
-                                        </StackPanel>
+                                        <Image Source="{Binding Anh, Converter={StaticResource ImagePathConverter}}" Height="120" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                                        <TextBlock Text="{Binding TenHang}" FontWeight="Bold" FontSize="16" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding MaHang, StringFormat=Mã hàng: {0}}" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding DonVi, StringFormat=Đơn vị: {0}}" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding GiaNhap, StringFormat=Giá nhập: {0:C}}" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding GiaXuat, StringFormat=Giá xuất: {0:C}}" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding SoLuongTon, StringFormat=Tồn kho: {0}}" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding MaCode, StringFormat=Mã code: {0}}" Margin="0,0,0,5"/>
                                     </StackPanel>
                                 </Border>
-
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    
                     <Grid Grid.Row="2" Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -197,12 +172,10 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Content="⮜ Previous" Margin="2"/>
-                        <Button Grid.Column="1" Content="   1   " Margin="2"/>
-                        <Button Grid.Column="2" Content="   2   " Margin="2"/>
-                        <Button Grid.Column="3" Content="   3   " Margin="2"/>
-                        <Button Grid.Column="4" Content="   ...   " Margin="2"/>
-                        <Button Grid.Column="5" Content="Next ⮞" Margin="2"/>
+
+                        <Button x:Name="btnPrev" Grid.Column="0" Content="⮜ Previous" Margin="2" Click="BtnPrev_Click"/>
+                        <TextBlock x:Name="txtPage" Grid.Column="2" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                        <Button x:Name="btnNext" Grid.Column="5" Content="Next ⮞" Margin="2" Click="BtnNext_Click"/>
                     </Grid>
                 </Grid>
             </GroupBox>

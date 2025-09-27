@@ -229,8 +229,16 @@
       <DependentUpon>ThucPhamModel.edmx</DependentUpon>
       <LastGenOutput>ThucPhamModel.cs</LastGenOutput>
     </Content>
+<<<<<<< HEAD
     <Content Include="QLThucPham.mdf" />
     <Content Include="QLThucPham_log.ldf">
+=======
+    <Content Include="QLThucPham.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QLThucPham_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+>>>>>>> ab82f419c7890c68c07f53c8f6b70fab9940d6c2
       <DependentUpon>QLThucPham.mdf</DependentUpon>
     </Content>
   </ItemGroup>
