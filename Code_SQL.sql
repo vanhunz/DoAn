@@ -1,0 +1,57 @@
+﻿CREATE TABLE VaiTro (
+    MaVaiTro INT PRIMARY KEY IDENTITY(1,1),
+    TenVaiTro NVARCHAR(50) NOT NULL
+);
+CREATE TABLE NguoiDung (
+    MaND INT PRIMARY KEY IDENTITY(1,1),
+    TenDangNhap NVARCHAR(50) UNIQUE NOT NULL,
+    MatKhau NVARCHAR(100) NOT NULL,
+    HoTen NVARCHAR(100),
+    Email NVARCHAR(100),
+    SoDienThoai NVARCHAR(20),
+    NgayTao DATETIME DEFAULT GETDATE(),
+    MaVaiTro INT NOT NULL,
+    FOREIGN KEY (MaVaiTro) REFERENCES VaiTro(MaVaiTro)
+);
+CREATE TABLE HangHoa (
+    MaHang INT PRIMARY KEY IDENTITY(1,1),
+    TenHang NVARCHAR(100) NOT NULL,
+    DonVi NVARCHAR(50),
+    GiaNhap DECIMAL(18,2),
+    GiaXuat DECIMAL(18,2),
+    SoLuongTon INT DEFAULT 0
+);
+CREATE TABLE PhieuNhap (
+    MaPhieuNhap INT PRIMARY KEY IDENTITY(1,1),
+    NgayNhap DATETIME DEFAULT GETDATE(),
+    MaND INT NOT NULL,
+    GhiChu NVARCHAR(200),
+    FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND)
+);
+CREATE TABLE ChiTietNhap (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    MaPhieuNhap INT NOT NULL,
+    MaHang INT NOT NULL,
+    SoLuong INT NOT NULL,
+    DonGia DECIMAL(18,2) NOT NULL,
+    FOREIGN KEY (MaPhieuNhap) REFERENCES PhieuNhap(MaPhieuNhap),
+    FOREIGN KEY (MaHang) REFERENCES HangHoa(MaHang)
+);
+
+-- Bảng Phiếu xuất
+CREATE TABLE PhieuXuat (
+    MaPhieuXuat INT PRIMARY KEY IDENTITY(1,1),
+    NgayXuat DATETIME DEFAULT GETDATE(),
+    MaND INT NOT NULL,
+    GhiChu NVARCHAR(200),
+    FOREIGN KEY (MaND) REFERENCES NguoiDung(MaND)
+);
+CREATE TABLE ChiTietXuat (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    MaPhieuXuat INT NOT NULL,
+    MaHang INT NOT NULL,
+    SoLuong INT NOT NULL,
+    DonGia DECIMAL(18,2) NOT NULL,
+    FOREIGN KEY (MaPhieuXuat) REFERENCES PhieuXuat(MaPhieuXuat),
+    FOREIGN KEY (MaHang) REFERENCES HangHoa(MaHang)
+);

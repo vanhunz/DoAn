@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -17,6 +17,8 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -31,8 +33,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -106,9 +106,6 @@
     <Compile Include="View\QuanLyNhapKho.xaml.cs">
       <DependentUpon>QuanLyNhapKho.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\QuanLyThongTinHangHoa.xaml.cs">
-      <DependentUpon>QuanLyThongTinHangHoa.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\QuanLyXuatKho.xaml.cs">
       <DependentUpon>QuanLyXuatKho.xaml</DependentUpon>
     </Compile>
@@ -149,10 +146,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\QuanLyNhapKho.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\QuanLyThongTinHangHoa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,7 +222,6 @@
       <DependentUpon>ThucPhamModel.edmx</DependentUpon>
       <LastGenOutput>ThucPhamModel.cs</LastGenOutput>
     </Content>
-    <!-- Fixed section -->
     <Content Include="QLThucPham.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -237,6 +229,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QLThucPham.mdf</DependentUpon>
     </Content>
+    <!-- Fixed section -->
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Huan\" />

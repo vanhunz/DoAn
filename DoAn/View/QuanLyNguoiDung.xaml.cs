@@ -97,15 +97,6 @@ namespace DoAn.View
             txt_SoDienThoai.Text = nd.SoDienThoai;
             date_NgayTao.SelectedDate = nd.NgayTao;
         }
-
-        private void Btn_Add_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Btn_Add_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }
