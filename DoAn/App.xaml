@@ -1,8 +1,9 @@
-﻿<Application x:Class="DoAn.App"
+﻿
+    <Application x:Class="DoAn.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:DoAn"
-             StartupUri="View/QuanLyNguoiDung.xaml">
+             StartupUri="View/QuanLyXuatKho.xaml">
     <Application.Resources>
 
     </Application.Resources>

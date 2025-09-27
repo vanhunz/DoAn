@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoAn"
         mc:Ignorable="d"
-        Title="QuanLyXuatKho" Height="450" Width="800">
+        Title="QuanLyXuatKho" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -25,35 +26,19 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Border Background="AliceBlue" CornerRadius="10" Padding="10" Margin="5" BorderBrush="#DDD" BorderThickness="1">
                 <StackPanel>
                     <TextBlock Text="Tổng đơn xuất" Foreground="Gray"/>
-                    <TextBlock Text="1,247" FontSize="22" FontWeight="Bold"/>
-                    <TextBlock Text="+12%" Foreground="Green"/>
-                </StackPanel>
-            </Border>
-            <Border Grid.Column="1" Background="AliceBlue" CornerRadius="10" Padding="10" Margin="5" BorderBrush="#DDD" BorderThickness="1">
-                <StackPanel>
-                    <TextBlock Text="Chờ xử lý" Foreground="Gray"/>
-                    <TextBlock Text="89" FontSize="22" FontWeight="Bold"/>
-                    <TextBlock Text="-5%" Foreground="Red"/>
-                </StackPanel>
-            </Border>
-            <Border Grid.Column="2" Background="AliceBlue" CornerRadius="10" Padding="10" Margin="5" BorderBrush="#DDD" BorderThickness="1">
-                <StackPanel>
-                    <TextBlock Text="Đã hoàn thành" Foreground="Gray"/>
-                    <TextBlock Text="1,158" FontSize="22" FontWeight="Bold"/>
-                    <TextBlock Text="+18%" Foreground="Green"/>
+                    <TextBlock x:Name="txbl_TongDon" FontSize="22" FontWeight="Bold"/>
+
                 </StackPanel>
             </Border>
             <Border Grid.Column="3" Background="AliceBlue" CornerRadius="10" Padding="10" Margin="5" BorderBrush="#DDD" BorderThickness="1">
                 <StackPanel>
                     <TextBlock Text="Giá trị xuất" Foreground="Gray"/>
-                    <TextBlock Text="₫2.4M" FontSize="22" FontWeight="Bold"/>
-                    <TextBlock Text="+25%" Foreground="Green"/>
+                    <TextBlock x:Name="txbl_GiaTriXuat" FontSize="22" FontWeight="Bold"/>
+         
                 </StackPanel>
             </Border>
         </Grid>
@@ -62,23 +47,40 @@
             <TextBox Width="200" Margin="5" Padding="5" Text="Tìm kiếm đơn xuất..." 
                      Foreground="Gray"/>
             <Button Content="Thêm đơn" Width="100" Margin="5" Background="DimGray" Foreground="White" 
-                    FontWeight="Bold" Padding="5" />
+                    FontWeight="Bold" Padding="5" Click="Btn_Them_Click" />
             <Button Content="Xóa đơn" Width="100" Margin="5" Background="DimGray" Foreground="White" 
-                    FontWeight="Bold" Padding="5" />
+                    FontWeight="Bold" Padding="5" Click="Btn_Xoa_Click"/>
             <Button Content="Cập nhật" Width="100" Margin="5" Background="DimGray" Foreground="White" 
-                    FontWeight="Bold" Padding="5" />
+                    FontWeight="Bold" Padding="5" Click="Btn_Sua_Click"/>
         </StackPanel>
-
+        <Grid Grid.Column="0" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Mã đơn" Margin="5"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="Tên Hàng" Margin="5"/>
+            <Label Grid.Column="2" Grid.Row="0" Content="Số lượng" Margin="5"/>
+            <Label Grid.Column="2" Grid.Row="1" Content="Ngày xuất" Margin="5"/>
+            <TextBox x:Name="txt_MaDon" Grid.Column="1" Grid.Row="0" Margin="5"/>
+            <TextBox x:Name="txt_TenHang" Grid.Column="1" Grid.Row="1" Margin="5"/>
+            <TextBox x:Name="txt_SoLuong" Grid.Column="3" Grid.Row="0" Margin="5"/>
+            <TextBox x:Name="txt_NgayXuat" Grid.Column="3" Grid.Row="1" Margin="5"/>
+        </Grid>
         <!-- DataGrid-->
-        <DataGrid Grid.Row="3" Width="auto" Margin="10" >
+        <DataGrid x:Name="DG_HienThi" Grid.Row="4" Width="auto" Margin="10" AutoGenerateColumns="False" SelectionChanged="DG_HienThi_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Mã đơn" Width="100"/>
-                <DataGridTextColumn Header="Khách hàng" Width="*"/>
-                <DataGridTextColumn Header="Tên hàng" Width="2*"/>
-                <DataGridTextColumn Header="Số lượng" Width="70"/>
-                <DataGridTextColumn Header="Giá trị" Width="120"/>
-                <DataGridTextColumn Header="Ngày xuất" Width="120"/>
-                <DataGridTextColumn Header="Trạng thái" Width="*"/>
+                <DataGridTextColumn Header="Mã đơn" Binding="{Binding MaDon}" Width="100"/>
+                <DataGridTextColumn Header="Tên hàng" Binding="{Binding TenHang}" Width="2*"/>
+                <DataGridTextColumn Header="Số lượng" Binding="{Binding SoLuong}" Width="70"/>
+                <DataGridTextColumn Header="Giá trị" Binding="{Binding GiaTri}" Width="120"/>
+                <DataGridTextColumn Header="Ngày xuất" Binding="{Binding NgayXuat}" Width="120"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

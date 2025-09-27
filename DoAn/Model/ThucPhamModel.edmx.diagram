@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="294e23a164f24ff0a97d24e61aa36e2a" Name="Diagram1">
+      <Diagram DiagramId="294e23a164f24ff0a97d24e61aa36e2a" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="QLThucPhamModel.ChiTietNhap" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLThucPhamModel.ChiTietXuat" Width="1.5" PointX="7.5" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLThucPhamModel.HangHoa" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThucPhamModel.HangHoa" Width="1.5" PointX="11" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLThucPhamModel.NguoiDung" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLThucPhamModel.PhieuNhap" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLThucPhamModel.PhieuXuat" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
