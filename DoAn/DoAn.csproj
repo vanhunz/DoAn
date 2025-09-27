@@ -225,6 +225,13 @@
       <DependentUpon>ThucPhamModel.edmx</DependentUpon>
       <LastGenOutput>ThucPhamModel.cs</LastGenOutput>
     </Content>
+    <Content Include="QLThucPham.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QLThucPham_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>QLThucPham.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Huan\" />

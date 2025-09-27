@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoAn.View"
         mc:Ignorable="d"
-        Title="QuanLyNguoiDung" Height="500" Width="800">
+        Title="QuanLyNguoiDung" Height="500" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -45,13 +45,13 @@
                 <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_TenDangNhap" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
 
                 <Label Grid.Row="2" Grid.Column="0" Content="Mật khẩu:" VerticalAlignment="Center"/>
-                <PasswordBox Grid.Row="2" Grid.Column="1" x:Name="txt_MatKhau" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
+                <PasswordBox Grid.Row="2" Grid.Column="1" x:Name="pw_MK" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
 
                 <Label Grid.Row="3" Grid.Column="0" Content="Họ tên:" VerticalAlignment="Center"/>
                 <TextBox Grid.Row="3" Grid.Column="1" x:Name="txt_HoTen" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
 
                 <!-- CỘT PHẢI -->
-                <Label Grid.Row="0" Grid.Column="2" Content="Mã vai trò:" VerticalAlignment="Center"/>
+                <Label Grid.Row="0" Grid.Column="2" Content="Mã vai trò (1,2):" VerticalAlignment="Center"/>
                 <TextBox Grid.Row="0" Grid.Column="3" x:Name="txt_MaVaiTro" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
 
                 <Label Grid.Row="1" Grid.Column="2" Content="Email:" VerticalAlignment="Center"/>
@@ -61,15 +61,18 @@
                 <TextBox Grid.Row="2" Grid.Column="3" x:Name="txt_SoDienThoai" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
 
                 <Label Grid.Row="3" Grid.Column="2" Content="Ngày tạo:" VerticalAlignment="Center"/>
-                <DatePicker Grid.Row="3" Grid.Column="3" x:Name="txt_NgayTao" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
+                <DatePicker Grid.Row="3" Grid.Column="3" x:Name="date_NgayTao" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
             </Grid>
 
             <!-- Nút Sửa / Xóa -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,10">
-                <Button Content="Sửa" Width="100" Margin="10,0" 
-                        Background="#A8E6CF" BorderBrush="Black" Height="30" Click="Button_Click"/>
-                <Button Content="Xóa" Width="100" Margin="10,0" 
-                        Background="#FFB6B9" BorderBrush="Black"/>
+                <Button x:Name="btn_Add" Content=" + Thêm người dùng" Margin="10,0,15,0" Padding="12,6" 
+                    Background="#A0CED9" Foreground="#333" BorderBrush="#89B8C0" Height="30" VerticalAlignment="Top" Width="162" Click="Btn_Add_Click"/>
+                <Button x:Name="btn_Sua" Content="Sửa" Width="100" Margin="10,0" 
+                        Background="#A8E6CF" BorderBrush="Black" Height="30" Click="Btn_Sua_Click"/>
+                <Button x:Name="btn_Xoa" Content="Xóa" Width="100" Margin="10,0" 
+                        Background="#FFB6B9" BorderBrush="Black" Click="Btn_Xoa_Click"/>
+                
             </StackPanel>
         </StackPanel>
 
@@ -84,11 +87,10 @@
                      Text="Tìm kiếm theo mã hoặc tên"/>
             <Button x:Name="btn_Search" Content="Tìm kiếm" Margin="0,0,15,0" Padding="12,6" 
                     Background="#FFD3B6" Foreground="#333" BorderBrush="#F5B895" />
-            <Button x:Name="btn_Add" Content=" + Thêm người dùng" Margin="200,0,15,0" Padding="12,6" 
-                    Background="#A0CED9" Foreground="#333" BorderBrush="#89B8C0" Height="30" VerticalAlignment="Top" Width="162" Click="Btn_Add_Click"/>
+            
         </StackPanel>
 
         <!-- DATAGRID -->
-        <DataGrid x:Name="dg_NguoiDung" Margin="10" Grid.ColumnSpan="2" Grid.Row="2"/>
+        <DataGrid x:Name="dg_NguoiDung" Margin="10" Grid.ColumnSpan="2" Grid.Row="2" SelectionChanged="Dg_NguoiDung_SelectionChanged"/>
     </Grid>
 </Window>

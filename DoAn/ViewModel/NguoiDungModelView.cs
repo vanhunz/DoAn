@@ -32,6 +32,7 @@ namespace DoAn.ViewModel
                 nd.MaND = ndCapNhat.MaND;
                 nd.TenDangNhap = ndCapNhat.TenDangNhap;
                 nd.MatKhau = ndCapNhat.MatKhau;
+                nd.HoTen = ndCapNhat.HoTen;
                 nd.MaVaiTro = ndCapNhat.MaVaiTro;
                 nd.Email = ndCapNhat.Email;
                 nd.SoDienThoai = ndCapNhat.SoDienThoai;
