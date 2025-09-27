@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoAn"
         mc:Ignorable="d"
-        Title="QuanLyNhapKho" Height="550" Width="800">
+        Title="QuanLyNhapKho" Height="550" Width="800" 
+        Loaded="Window_Loaded">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="388*"/>
