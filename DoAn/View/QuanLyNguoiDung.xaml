@@ -13,8 +13,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- TIÊU ĐỀ + FORM NHẬP LIỆU -->
-        <StackPanel Grid.Row="0" Margin="20,20,20,20" Background="#FFF9F9" >
+        <!-- Trang TIÊU ĐỀ + FORM NHẬP LIỆU -->
+        <StackPanel Grid.Row="0" Margin="20,20,20,21" Background="#FFF9F9" >
             <TextBlock Text="QUẢN LÝ NGƯỜI DÙNG" 
                        FontSize="24" 
                        FontWeight="Bold" 
