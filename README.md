@@ -24,7 +24,7 @@ Sau đó mở project bằng **Visual Studio 2022**.
 1. Mở **Visual Studio**.
 2. Vào menu **View > SQL Server Object Explorer**.
 3. Kết nối với **(localdb)\MSSQLLocalDB**.
-4. Chuột phải vào **Databases** → chọn **New Query**.
+4. Chuột phải vào **QLThucPham** → chọn **New Query**.
 5. Mở file `QLKho.sql` (có trong thư mục project) → copy toàn bộ nội dung.
 6. Dán vào query editor và bấm **Execute (Ctrl + Shift + E)**.
 
@@ -38,9 +38,10 @@ Trong file `Web.config`, chỉnh lại `connectionStrings` nếu LocalDB khác t
 
 ```xml
 <connectionStrings>
-  <add name="QLKhoConnectionString"
-       connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=QLKho;Integrated Security=True"
-       providerName="System.Data.SqlClient" />
+  <add name="QLThucPhamEntities" connectionString="metadata=res://*/Model.ThucPhamModel.csdl|res://*/Model.ThucPhamModel.ssdl|res://*/Model.ThucPhamModel.msl;provider=System.Data.SqlClient;
+ provider connection string=&quot;Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\CS464\DoAn\QLThucPham.mdf;
+Integrated Security=True&quot;
+" providerName="System.Data.EntityClient" />
 </connectionStrings>
 ```
 
