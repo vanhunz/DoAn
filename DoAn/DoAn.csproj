@@ -110,14 +110,14 @@
     <Compile Include="Model\PhieuXuat.cs">
       <DependentUpon>ThucPhamModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AuthViewModel.cs" />
-    <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\NguoiDungModelView.cs" />
+    <Compile Include="ViewModel\Hunz\AuthViewModel.cs" />
+    <Compile Include="ViewModel\Hunz\BaseViewModel.cs" />
+    <Compile Include="ViewModel\Hunz\NguoiDungModelView.cs" />
     <Compile Include="ViewModel\NhapKhoViewModel.cs" />
-    <Compile Include="ViewModel\QLHangHoa.cs" />
+    <Compile Include="ViewModel\Hunz\QLHangHoa.cs" />
     <Compile Include="ViewModel\QuanLyXuatKho.cs" />
-    <Compile Include="ViewModel\RelayCommand.cs" />
-    <Compile Include="ViewModel\StringToVisibilityConverter.cs" />
+    <Compile Include="ViewModel\Hunz\RelayCommand.cs" />
+    <Compile Include="ViewModel\Hunz\StringToVisibilityConverter.cs" />
     <Compile Include="View\Huan\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
