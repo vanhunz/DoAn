@@ -112,7 +112,7 @@
     </Compile>
     <Compile Include="ViewModel\Hunz\AuthViewModel.cs" />
     <Compile Include="ViewModel\Hunz\BaseViewModel.cs" />
-    <Compile Include="ViewModel\Hunz\NguoiDungModelView.cs" />
+    <Compile Include="ViewModel\NguoiDungModelView.cs" />
     <Compile Include="ViewModel\NhapKhoViewModel.cs" />
     <Compile Include="ViewModel\Hunz\QLHangHoa.cs" />
     <Compile Include="ViewModel\QuanLyXuatKho.cs" />
