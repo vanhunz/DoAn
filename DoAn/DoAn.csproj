@@ -271,9 +271,7 @@
     </Content>
     <!-- Fixed section -->
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\Huan\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
