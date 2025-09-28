@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="QuanLyThongTinHangHoa" Height="650" Width="1100">
+        Title="QuanLyThongTinHangHoa" Height="600" Width="1100">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,8 +19,6 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
-
-            <!-- Menu bên trái -->
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -34,28 +32,24 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Row="0" Grid.Column="0" Content="🔳" Margin="10"/>
-                        <Button Grid.Row="0" Grid.Column="1" Content="Dashboard" Margin="10"/>
+                        <Label Grid.Row="0" Grid.Column="0" Content="🔳" Margin="0,5"/>
+                        <Button Grid.Row="0" Grid.Column="1" Content="Cảnh báo tồn kho" />
 
-                        <Label Grid.Row="1" Grid.Column="0" Content="📦" Margin="10"/>
-                        <Button Grid.Row="1" Grid.Column="1" Content="Sản phẩm" Margin="10"/>
+                        <Label Grid.Row="1" Grid.Column="0" Content="📦" Margin="0,5"/>
+                        <Button Grid.Row="1" Grid.Column="1" Content="Cảnh báo HSD" />
 
-                        <Label Grid.Row="2" Grid.Column="0" Content="🛒" Margin="10"/>
-                        <Button Grid.Row="2" Grid.Column="1" Content="Đơn hàng" Margin="10"/>
+                        <Label Grid.Row="2" Grid.Column="0" Content="🛒" Margin="0,5"/>
+                        <Button Grid.Row="2" Grid.Column="1" Content="Xuất/Nhập dữ liệu" />
 
-                        <Label Grid.Row="3" Grid.Column="0" Content="👤" Margin="10"/>
-                        <Button Grid.Row="3" Grid.Column="1" Content="Người dùng" Margin="10"/>
-
-                        <Label Grid.Row="4" Grid.Column="0" Content="🖥️" Margin="10"/>
-                        <Button Grid.Row="4" Grid.Column="1" Content="Phân quyền" Margin="10"/>
+                        <Label Grid.Row="3" Grid.Column="0" Content="👤" Margin="0,5"/>
+                        <Button Grid.Row="3" Grid.Column="1" Content="Báo cáo nhanh" />
                     </Grid>
                 </GroupBox>
 
@@ -168,22 +162,46 @@
 
                     <!-- DataGrid chính -->
                     <DataGrid x:Name="lvHangHoa" 
-                              Grid.Row="1" Grid.Column="1" 
-                              AutoGenerateColumns="False" 
-                              CanUserAddRows="True"
-                              IsReadOnly="False"
-                              Margin="5"
-                              ColumnWidth="*"
-                              RowEditEnding="lvHangHoa_RowEditEnding">
+          Grid.Row="1" Grid.Column="1" 
+          AutoGenerateColumns="False" 
+          CanUserAddRows="True"
+          IsReadOnly="False"
+          Margin="5"
+          RowEditEnding="lvHangHoa_RowEditEnding"
+          ColumnWidth="Auto">
+
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Mã hàng" Binding="{Binding MaHang}" IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Tên hàng" Binding="{Binding TenHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Đơn vị" Binding="{Binding DonVi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Giá nhập" Binding="{Binding GiaNhap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Giá xuất" Binding="{Binding GiaXuat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Số lượng tồn" Binding="{Binding SoLuongTon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <DataGridTextColumn Header="Mã hàng" 
+                            Binding="{Binding MaHang}" 
+                            IsReadOnly="True"
+                            Width="SizeToCells"/>
+
+                            <DataGridTextColumn Header="Tên hàng" 
+                            Binding="{Binding TenHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="SizeToCells"/>
+
+                            <DataGridTextColumn Header="Giá nhập" 
+                            Binding="{Binding GiaNhap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="SizeToCells"/>
+
+                            <DataGridTextColumn Header="Giá xuất" 
+                            Binding="{Binding GiaXuat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="SizeToCells"/>
+
+                            <DataGridTextColumn Header="Số lượng tồn" 
+                            Binding="{Binding SoLuongTon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="SizeToCells"/>
+
+                            <DataGridTextColumn Header="NSX" 
+                            Binding="{Binding NSX, Mode=TwoWay, StringFormat={}{0:dd/MM/yyyy}, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="SizeToCells"/>
+
+                            <DataGridTextColumn Header="HSD" 
+                            Binding="{Binding HSD, Mode=TwoWay, StringFormat={}{0:dd/MM/yyyy}, UpdateSourceTrigger=PropertyChanged}" 
+                            Width="SizeToCells"/>
                         </DataGrid.Columns>
                     </DataGrid>
+
 
                     <!-- Phân trang -->
                     <Grid Grid.Row="2" Grid.Column="1">

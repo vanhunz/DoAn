@@ -15,7 +15,7 @@ namespace DoAn.ViewModel
             }
         }
 
-        public bool ThemHangHoa(string ten, string donVi, decimal? giaNhap, decimal? giaXuat, int? soLuongTon)
+        public bool ThemHangHoa(string ten, decimal? giaNhap, decimal? giaXuat, int? soLuongTon, DateTime? nsx, DateTime? hsd)
         {
             try
             {
@@ -24,10 +24,11 @@ namespace DoAn.ViewModel
                     HangHoa hh = new HangHoa()
                     {
                         TenHang = ten,
-                        DonVi = donVi,
                         GiaNhap = giaNhap,
                         GiaXuat = giaXuat,
-                        SoLuongTon = soLuongTon
+                        SoLuongTon = soLuongTon,
+                        NSX = nsx,
+                        HSD = hsd
                     };
 
                     db.HangHoa.Add(hh);
@@ -42,7 +43,7 @@ namespace DoAn.ViewModel
             }
         }
 
-        public bool SuaHangHoa(int maHang, string ten, string donVi, decimal? giaNhap, decimal? giaXuat, int? soLuongTon)
+        public bool SuaHangHoa(int maHang, string ten, decimal? giaNhap, decimal? giaXuat, int? soLuongTon, DateTime? nsx, DateTime? hsd)
         {
             try
             {
@@ -52,10 +53,11 @@ namespace DoAn.ViewModel
                     if (hh == null) return false;
 
                     hh.TenHang = ten;
-                    hh.DonVi = donVi;
                     hh.GiaNhap = giaNhap;
                     hh.GiaXuat = giaXuat;
                     hh.SoLuongTon = soLuongTon;
+                    hh.NSX = nsx;
+                    hh.HSD = hsd;
 
                     db.SaveChanges();
                     return true;
@@ -120,6 +122,7 @@ namespace DoAn.ViewModel
                 return db.HangHoa.OrderBy(h => h.TenHang).ToList();
             }
         }
+
         public int TongSoLuongTon()
         {
             using (var db = new QLThucPhamEntities())
@@ -135,7 +138,5 @@ namespace DoAn.ViewModel
                 return db.HangHoa.Count();
             }
         }
-
-
     }
 }

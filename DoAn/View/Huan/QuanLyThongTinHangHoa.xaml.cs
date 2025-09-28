@@ -86,10 +86,11 @@ namespace DoAn
                     }
 
                     ql.ThemHangHoa(newHangHoa.TenHang,
-                                   newHangHoa.DonVi,
                                    newHangHoa.GiaNhap,
                                    newHangHoa.GiaXuat,
-                                   newHangHoa.SoLuongTon);
+                                   newHangHoa.SoLuongTon,
+                                   newHangHoa.NSX,
+                                   newHangHoa.HSD);
 
                     MessageBox.Show("Thêm thành công!");
                     isAdding = false;
@@ -114,8 +115,10 @@ namespace DoAn
 
             try
             {
-                ql.SuaHangHoa(selected.MaHang, selected.TenHang, selected.DonVi,
-                               selected.GiaNhap, selected.GiaXuat, selected.SoLuongTon);
+                ql.SuaHangHoa(selected.MaHang, selected.TenHang,
+                               selected.GiaNhap, selected.GiaXuat,
+                               selected.SoLuongTon, selected.NSX, selected.HSD);
+
                 MessageBox.Show("Sửa thành công!");
                 LoadHangHoa();
             }
@@ -242,14 +245,16 @@ namespace DoAn
             {
                 lblDetail.Text = $"Mã: {selected.MaHang}\n" +
                                  $"Tên: {selected.TenHang}\n" +
-                                 $"Đơn vị: {selected.DonVi}\n" +
                                  $"Giá nhập: {selected.GiaNhap}\n" +
                                  $"Giá xuất: {selected.GiaXuat}\n" +
-                                 $"Số lượng tồn: {selected.SoLuongTon}";
+                                 $"Số lượng tồn: {selected.SoLuongTon}\n" +
+                                 $"NSX: {selected.NSX?.ToShortDateString()}\n" +
+                                 $"HSD: {selected.HSD?.ToShortDateString()}";
 
                 productDetailPanel.Visibility = Visibility.Visible;
             }
         }
+
         //Thông kê
         private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {

@@ -31,10 +31,11 @@
           </Key>
           <Property Name="MaHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenHang" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="DonVi" Type="nvarchar" MaxLength="50" />
           <Property Name="GiaNhap" Type="decimal" Precision="18" Scale="2" />
           <Property Name="GiaXuat" Type="decimal" Precision="18" Scale="2" />
           <Property Name="SoLuongTon" Type="int" />
+          <Property Name="NSX" Type="date" />
+          <Property Name="HSD" Type="date" />
         </EntityType>
         <EntityType Name="NguoiDung">
           <Key>
@@ -229,12 +230,13 @@
           </Key>
           <Property Name="MaHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DonVi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GiaNhap" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="GiaXuat" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="SoLuongTon" Type="Int32" />
           <NavigationProperty Name="ChiTietNhap" Relationship="Self.FK__ChiTietNh__MaHan__44FF419A" FromRole="HangHoa" ToRole="ChiTietNhap" />
           <NavigationProperty Name="ChiTietXuat" Relationship="Self.FK__ChiTietXu__MaHan__4CA06362" FromRole="HangHoa" ToRole="ChiTietXuat" />
+          <Property Name="NSX" Type="DateTime" Precision="0" />
+          <Property Name="HSD" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NguoiDung">
           <Key>
@@ -434,9 +436,10 @@
           <EntitySetMapping Name="HangHoa">
             <EntityTypeMapping TypeName="QLThucPhamModel.HangHoa">
               <MappingFragment StoreEntitySet="HangHoa">
+                <ScalarProperty Name="HSD" ColumnName="HSD" />
+                <ScalarProperty Name="NSX" ColumnName="NSX" />
                 <ScalarProperty Name="MaHang" ColumnName="MaHang" />
                 <ScalarProperty Name="TenHang" ColumnName="TenHang" />
-                <ScalarProperty Name="DonVi" ColumnName="DonVi" />
                 <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
                 <ScalarProperty Name="GiaXuat" ColumnName="GiaXuat" />
                 <ScalarProperty Name="SoLuongTon" ColumnName="SoLuongTon" />
@@ -499,7 +502,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

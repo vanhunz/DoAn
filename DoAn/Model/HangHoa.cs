@@ -23,10 +23,11 @@ namespace DoAn.Model
     
         public int MaHang { get; set; }
         public string TenHang { get; set; }
-        public string DonVi { get; set; }
         public Nullable<decimal> GiaNhap { get; set; }
         public Nullable<decimal> GiaXuat { get; set; }
         public Nullable<int> SoLuongTon { get; set; }
+        public Nullable<System.DateTime> NSX { get; set; }
+        public Nullable<System.DateTime> HSD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietNhap> ChiTietNhap { get; set; }
