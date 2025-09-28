@@ -20,10 +20,8 @@ namespace DoAn.ViewModel
         // --- Login ---
         public string LoginUser { get; set; }
         public string LoginPass { get; set; }
-
-        // --- Forgot ---
         public string ForgotUser { get; set; }
-        public string ForgotContact { get; set; } // email or phone
+        public string ForgotContact { get; set; } 
         public string NewPass { get; set; }
         public string ConfirmNewPass { get; set; }
         private bool _showResetFields;
@@ -66,18 +64,29 @@ namespace DoAn.ViewModel
             {
                 var user = _db.NguoiDung
                               .FirstOrDefault(u => u.TenDangNhap == LoginUser && u.MatKhau == LoginPass);
+
                 if (user != null)
                 {
-                    // theo yêu cầu: hiển thị "Sau update"
-                    MessageBox.Show("Sau update", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    // Mở Menu.xaml
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        var menu = new DoAn.View.Huan.Menu();
+                        menu.Show();
 
-                    // nếu muốn mở MainWindow thay thế AuthWindow, bật 2 dòng sau (bỏ comment)
-                    // Application.Current.MainWindow?.Hide();
-                    // new MainWindow().Show();
+                        foreach (Window w in Application.Current.Windows)
+                        {
+                            if (w is DoAn.View.Huan.AuthWindow)
+                            {
+                                w.Close();
+                                break;
+                            }
+                        }
+                    });
                 }
                 else
                 {
-                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!",
+                                    "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             catch (Exception ex)
@@ -85,6 +94,7 @@ namespace DoAn.ViewModel
                 MessageBox.Show("Lỗi khi đăng nhập: " + ex.Message);
             }
         }
+
 
         private void DoCheckForgot()
         {

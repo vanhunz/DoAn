@@ -121,14 +121,14 @@
     <Compile Include="View\Huan\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Huan\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Huan\QuanLyThongTinHangHoa.xaml.cs">
       <DependentUpon>QuanLyThongTinHangHoa.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyNhapKho.xaml.cs">
       <DependentUpon>QuanLyNhapKho.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\QuanLyThongTinHangHoa.xaml.cs">
-      <DependentUpon>QuanLyThongTinHangHoa.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyXuatKho.xaml.cs">
       <DependentUpon>QuanLyXuatKho.xaml</DependentUpon>
@@ -161,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Huan\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Huan\QuanLyThongTinHangHoa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -168,6 +172,10 @@
     <Page Include="View\Huan\Styles1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Huan\Styles2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -182,10 +190,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\QuanLyNhapKho.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\QuanLyThongTinHangHoa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
