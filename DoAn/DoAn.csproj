@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -155,9 +155,6 @@
     <Compile Include="ViewModel\NhapKhoViewModel.cs" />
     <Compile Include="ViewModel\Hunz\QLHangHoa.cs" />
     <Compile Include="ViewModel\QuanLyXuatKho.cs" />
-<<<<<<< HEAD
-    <Compile Include="ViewModel\TheoDoiTonKhoViewModel.cs" />
-=======
     <Compile Include="ViewModel\Hunz\RelayCommand.cs" />
     <Compile Include="ViewModel\Hunz\StringToVisibilityConverter.cs" />
     <Compile Include="View\Huan\AuthWindow.xaml.cs">
@@ -169,12 +166,14 @@
     <Compile Include="View\Huan\QuanLyThongTinHangHoa.xaml.cs">
       <DependentUpon>QuanLyThongTinHangHoa.xaml</DependentUpon>
     </Compile>
->>>>>>> d775ee81a8d849d16c2a184316caeb8b3509f812
     <Compile Include="View\QuanLyNhapKho.xaml.cs">
       <DependentUpon>QuanLyNhapKho.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyXuatKho.xaml.cs">
       <DependentUpon>QuanLyXuatKho.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TheoDoiTonKho.xaml.cs">
+      <DependentUpon>TheoDoiTonKho.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\ThucPhamModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -197,11 +196,6 @@
     <Compile Include="View\QuanLyNguoiDung.xaml.cs">
       <DependentUpon>QuanLyNguoiDung.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="View\TheoDoiTonKho.xaml.cs">
-      <DependentUpon>TheoDoiTonKho.xaml</DependentUpon>
-    </Compile>
-=======
     <Page Include="View\Huan\AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -222,7 +216,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
->>>>>>> d775ee81a8d849d16c2a184316caeb8b3509f812
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -243,11 +236,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QuanLyNguoiDung.xaml">
+    <Page Include="View\TheoDoiTonKho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TheoDoiTonKho.xaml">
+    <Page Include="View\QuanLyNguoiDung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -312,21 +305,12 @@
       <DependentUpon>ThucPhamModel.edmx</DependentUpon>
       <LastGenOutput>ThucPhamModel.cs</LastGenOutput>
     </Content>
-<<<<<<< HEAD
-    <Content Include="QLThucPham.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="QLThucPham_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>QLThucPham.mdf</DependentUpon>
-=======
     <Content Include="QLHangHoa.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="QLHangHoa_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QLHangHoa.mdf</DependentUpon>
->>>>>>> d775ee81a8d849d16c2a184316caeb8b3509f812
     </Content>
     <!-- Fixed section -->
   </ItemGroup>
