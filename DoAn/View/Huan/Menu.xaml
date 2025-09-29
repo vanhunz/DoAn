@@ -16,8 +16,6 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <!-- Cột Trái -->
         <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" >
             <StackPanel Margin="0,15">
                 <Button Content="👤 Quản lý người dùng" Width="220" Height="50" 
@@ -43,8 +41,6 @@
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
         </StackPanel>
-
-        <!-- Cột Phải -->
         <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
             <StackPanel Margin="0,15">
                 <Button Content="📊 Theo dõi tồn kho" Width="220" Height="50"
