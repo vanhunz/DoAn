@@ -13,17 +13,17 @@ Mở terminal / git bash và chạy lệnh:
 ```bash
 git clone https://github.com/vanhunz/DoAn
 git clone 
-````
+
 
 Sau đó mở project bằng **Visual Studio 2022**.
 
----
 
 ### 2 Tạo database từ file SQL
 
 1. Mở **Visual Studio**.
-2. Vào menu **View > SQL Server Object Explorer**.
-3. Kết nối với **(localdb)\MSSQLLocalDB**.
+2. Vào menu **View > **SQL Server Object Explorer**.
+3. Kết nối với **(localdb)\MSSQLLocalDB**._ Đặt tên QLThucPham <img width="206" height="54" alt="image" src="https://github.com/user-attachments/assets/53c61ef0-e5e7-4ba4-bb47-5f1abdd93c03" />
+
 4. Chuột phải vào **QLThucPham** → chọn **New Query**.
 5. Mở file `QLThucPham.sql` (có trong thư mục project) → copy toàn bộ nội dung.
 6. Dán vào query editor và bấm **Execute (Ctrl + Shift + E)**.
