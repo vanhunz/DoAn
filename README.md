@@ -64,5 +64,3 @@ Nếu có vấn đề khi chạy project, vui lòng liên hệ:
 📩 **Email:** [vovanhuanhjhj@gmail.com](mailto:vovanhuanhjhj@gmail.com)
 💬 **Zalo:** 0397199215 *(Ưu tiên)*
 
-Bạn có muốn mình làm thêm **mục Demo (ảnh chụp màn hình giao diện web)** ở cuối README để nhìn trực quan hơn không?
-```
