@@ -25,7 +25,7 @@ Sau đó mở project bằng **Visual Studio 2022**.
 2. Vào menu **View > SQL Server Object Explorer**.
 3. Kết nối với **(localdb)\MSSQLLocalDB**.
 4. Chuột phải vào **QLThucPham** → chọn **New Query**.
-5. Mở file `QLKho.sql` (có trong thư mục project) → copy toàn bộ nội dung.
+5. Mở file `QLThucPham.sql` (có trong thư mục project) → copy toàn bộ nội dung.
 6. Dán vào query editor và bấm **Execute (Ctrl + Shift + E)**.
 
 👉 Lúc này database **QLKho** sẽ được tạo cùng các bảng và dữ liệu mẫu.
@@ -36,23 +36,13 @@ Sau đó mở project bằng **Visual Studio 2022**.
 
 Trong file `Web.config`, chỉnh lại `connectionStrings` nếu LocalDB khác tên:
 
-```xml
-<connectionStrings>
-  <add name="QLThucPhamEntities" connectionString="metadata=res://*/Model.ThucPhamModel.csdl|res://*/Model.ThucPhamModel.ssdl|res://*/Model.ThucPhamModel.msl;provider=System.Data.SqlClient;
- provider connection string=&quot;Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\CS464\DoAn\QLThucPham.mdf;
-Integrated Security=True&quot;
-" providerName="System.Data.EntityClient" />
-</connectionStrings>
-```
-
----
 
 ### 4 Chạy project
 
 * Nhấn **Ctrl + F5** trong Visual Studio.
-* Truy cập website qua trình duyệt (mặc định là `https://localhost:xxxx`).
 
----
+---<img width="125" height="65" alt="image" src="https://github.com/user-attachments/assets/bf8f013c-91ce-4777-bd8e-a1edbd336ca1" />
+
 
 ## 🛠 Chức năng chính
 
