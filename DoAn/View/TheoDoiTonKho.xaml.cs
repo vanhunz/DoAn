@@ -11,17 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DoAn.ViewModel;
 
-namespace DoAn
+namespace DoAn.View
 {
-    /// <summary>
-    /// Interaction logic for TheoGioiTonKho.xaml
-    /// </summary>
-    public partial class TheoGioiTonKho : Window
+
+    public partial class TheoDoiTonKho : Window
     {
-        public TheoGioiTonKho()
+        public TheoDoiTonKho()
         {
             InitializeComponent();
+            this.DataContext = new TheoDoiTonKhoViewModel();
         }
     }
 }

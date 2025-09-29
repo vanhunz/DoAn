@@ -104,6 +104,7 @@
     <Compile Include="ViewModel\NguoiDungModelView.cs" />
     <Compile Include="ViewModel\NhapKhoViewModel.cs" />
     <Compile Include="ViewModel\QuanLyXuatKho.cs" />
+    <Compile Include="ViewModel\TheoDoiTonKhoViewModel.cs" />
     <Compile Include="View\QuanLyNhapKho.xaml.cs">
       <DependentUpon>QuanLyNhapKho.xaml</DependentUpon>
     </Compile>
@@ -112,9 +113,6 @@
     </Compile>
     <Compile Include="View\QuanLyXuatKho.xaml.cs">
       <DependentUpon>QuanLyXuatKho.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TheoDoiTonKho.xaml.cs">
-      <DependentUpon>TheoDoiTonKho.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\ThucPhamModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -136,6 +134,9 @@
     </Compile>
     <Compile Include="View\QuanLyNguoiDung.xaml.cs">
       <DependentUpon>QuanLyNguoiDung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TheoDoiTonKho.xaml.cs">
+      <DependentUpon>TheoDoiTonKho.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -161,11 +162,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TheoDoiTonKho.xaml">
+    <Page Include="View\QuanLyNguoiDung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QuanLyNguoiDung.xaml">
+    <Page Include="View\TheoDoiTonKho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -231,10 +232,10 @@
       <LastGenOutput>ThucPhamModel.cs</LastGenOutput>
     </Content>
     <Content Include="QLThucPham.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="QLThucPham_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>QLThucPham.mdf</DependentUpon>
     </Content>
     <!-- Fixed section -->
