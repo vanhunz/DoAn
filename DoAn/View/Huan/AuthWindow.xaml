@@ -31,13 +31,13 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0 5">
                     <Label Content="Tên đăng nhập" Width="120"/>
-                    <TextBox Width="200"
+                    <TextBox Width="200" Height="30"
                              Text="{Binding LoginUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0 5">
-                    <Label Content="Mật khẩu" Width="120"/>
-                    <PasswordBox x:Name="LoginPasswordBox" Width="200"
+                    <Label Content="Mật khẩu" Width="125"/>
+                    <PasswordBox x:Name="LoginPasswordBox" Width="200" Height="30"
                                  PasswordChanged="LoginPasswordBox_PasswordChanged"/>
                 </StackPanel>
 

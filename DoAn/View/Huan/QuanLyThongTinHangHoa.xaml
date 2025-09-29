@@ -25,7 +25,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <GroupBox Header="Main Menu" Grid.Row="0">
+                <GroupBox Header="Main Menu" FontSize="14" Grid.Row="0">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -38,51 +38,46 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
-
-                        <Label Grid.Row="0" Grid.Column="0" Content="🔳" Margin="0,5"/>
-                        <Button Grid.Row="0" Grid.Column="1" Content="Cảnh báo tồn kho" Click="BtnCanhBaoTonKho_Click"/>
-
-                        <Label Grid.Row="1" Grid.Column="0" Content="📦" Margin="0,5"/>
-                        <Button Grid.Row="1" Grid.Column="1" Content="Cảnh báo HSD" Click="BtnCanhBaoHSD_Click"/>
-
-                        <Label Grid.Row="2" Grid.Column="0" Content="🛒" Margin="0,5"/>
-                        <Button Grid.Row="2" Grid.Column="1" Content="Xuất .csv" Click="BtnXuat_Click"/>
-
-                        <Label Grid.Row="3" Grid.Column="0" Content="👤" Margin="0,5"/>
-                        <Button Grid.Row="3" Grid.Column="1" Content="Báo cáo nhanh" Click="BtnBaoCao_Click"/>
-
-                        <Label Grid.Row="4" Grid.Column="0" Content="👤" Margin="0,5"/>
-                        <Button Grid.Row="4" Grid.Column="1" Content="Nhập bằng file" Click="BtnNhap_Click"/>
+                        <Label Grid.Row="0" Grid.Column="0" Content="⚠️" Margin="0,5"/>
+                        <Button Grid.Row="0" Grid.Column="1" Margin="5" 
+        Content="Cảnh báo tồn kho" Click="BtnCanhBaoTonKho_Click"/>
+                        <Label Grid.Row="1" Grid.Column="0" Content="⏰" Margin="0,5"/>
+                        <Button Grid.Row="1" Grid.Column="1" Margin="5" 
+        Content="Cảnh báo HSD" Click="BtnCanhBaoHSD_Click"/>
+                        <Label Grid.Row="2" Grid.Column="0" Content="📤" Margin="0,5"/>
+                        <Button Grid.Row="2" Grid.Column="1" Margin="5" 
+        Content="Xuất .csv" Click="BtnXuat_Click"/>
+                        <Label Grid.Row="3" Grid.Column="0" Content="📊" Margin="0,5"/>
+                        <Button Grid.Row="3" Grid.Column="1" Margin="5" 
+        Content="Báo cáo nhanh" Click="BtnBaoCao_Click"/>
+                        <Label Grid.Row="4" Grid.Column="0" Content="📥" Margin="0,5"/>
+                        <Button Grid.Row="4" Grid.Column="1" Margin="5" 
+        Content="Nhập bằng file" Click="BtnNhap_Click"/>
 
                     </Grid>
                 </GroupBox>
 
-                <GroupBox Header="Quyền Hạn" Grid.Row="1">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Label Grid.Row="0" Grid.Column="0" Content="☰" Margin="10"/>
-                        <Button Grid.Row="0" Grid.Column="1" Content="Menu" Margin="10"/>
-
-                        <Label Grid.Row="1" Grid.Column="0" Content="💬" Margin="10"/>
-                        <Button Grid.Row="1" Grid.Column="1" Content="Messages" Margin="10"/>
-
-                        <Label Grid.Row="2" Grid.Column="0" Content="⚙️" Margin="10"/>
-                        <Button Grid.Row="2" Grid.Column="1" Content="Setting" Margin="10"/>
-                    </Grid>
+                <GroupBox Header="Thông tin ứng dụng" FontSize="14" Grid.Row="1">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="📦 Phần mềm quản lý kho" 
+                   FontWeight="Bold" 
+                   Foreground="DarkBlue" 
+                   FontSize="14" 
+                   Margin="0,5"/>
+                        <TextBlock Text="Phiên bản: 1.0.0" 
+                   FontStyle="Italic" 
+                   Foreground="Gray" 
+                   Margin="0,2"/>
+                        <TextBlock Text="Tác giả: Nhóm 6" 
+                   Foreground="#6A1B9A" 
+                   Margin="0,2"/>
+                        <TextBlock Text="Liên hệ: Vovanhuanhjhj@email.com" 
+                   Foreground="DarkGreen" 
+                   Margin="0,5"/>
+                    </StackPanel>
                 </GroupBox>
+
             </Grid>
-
-            <!-- Quản lý hàng hóa -->
             <GroupBox Grid.Column="1" Header="Quản lý thông tin hàng hóa">
                 <Grid Margin="10">
                     <Grid.RowDefinitions>
@@ -94,8 +89,6 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
-
-                    <!-- Thanh tìm kiếm chính -->
                     <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="300"/>
@@ -120,10 +113,8 @@
                                 Margin="2" 
                                 Click="BtnBack_Click"/>
                     </Grid>
-
-                    <!-- Panel bên trái -->
                     <StackPanel Grid.Row="1" Grid.Column="0" Margin="2">
-                        <GroupBox Header="Thống kê sản phẩm" Margin="2">
+                        <GroupBox Header="Thống kê sản phẩm" FontSize="14" Margin="2">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -146,7 +137,7 @@
                         </GroupBox>
 
 
-                        <GroupBox Header="Sắp xếp theo" Margin="2">
+                        <GroupBox Header="Sắp xếp theo" FontSize="14" Margin="2">
                             <StackPanel>
                                 <Button x:Name="btnSapXepGiaNhap" Content=" Giá nhập" Margin="2" Click="BtnSapXepGiaNhap_Click"/>
                                 <Button x:Name="btnSapXepGiaXuat" Content=" Giá xuất" Margin="2" Click="BtnSapXepGiaXuat_Click"/>
@@ -155,7 +146,7 @@
                             </StackPanel>
                         </GroupBox>
 
-                        <GroupBox Header="Chức năng" Margin="2">
+                        <GroupBox Header="Chức năng" FontSize="14" Margin="2">
                             <StackPanel>
                                 <Button x:Name="btnThem" Content="➕ Thêm" Margin="2" Click="BtnThem_Click"/>
                                 <Button x:Name="btnSua" Content="✏️ Sửa" Margin="2" Click="BtnSua_Click"/>
@@ -163,8 +154,6 @@
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>
-
-                    <!-- DataGrid chính -->
                     <DataGrid x:Name="lvHangHoa" 
           Grid.Row="1" Grid.Column="1" 
           AutoGenerateColumns="False" 
@@ -205,9 +194,6 @@
                             Width="SizeToCells"/>
                         </DataGrid.Columns>
                     </DataGrid>
-
-
-                    <!-- Phân trang -->
                     <Grid Grid.Row="2" Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -221,8 +207,6 @@
                         <TextBlock x:Name="txtPage" Grid.Column="2" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
                         <Button x:Name="btnNext" Grid.Column="5" Content="Next ⮞" Margin="2" Click="BtnNext_Click"/>
                     </Grid>
-
-                    <!-- Panel chi tiết -->
                     <Border x:Name="productDetailPanel" 
                             Grid.Row="1" Grid.Column="1"
                             Background="LightGray"

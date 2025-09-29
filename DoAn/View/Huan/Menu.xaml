@@ -7,18 +7,22 @@
 
     <Grid Margin="20">
 
-        <!-- Chia 2 cột cho button -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Cột trái -->
-        <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" >
+        <!-- Cột Trái -->
+        <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" >
             <StackPanel Margin="0,15">
                 <Button Content="👤 Quản lý người dùng" Width="220" Height="50" 
                         Background="#1E88E5" Foreground="White" FontWeight="Bold"
-                        BorderThickness="0"/>
+                        BorderThickness="0" Click="QuanLyNguoiDung_Click"/>
                 <TextBlock Text="Người A" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
@@ -26,7 +30,7 @@
             <StackPanel Margin="0,15">
                 <Button Content="📥 Quản lý nhập kho" Width="220" Height="50"
                         Background="#43A047" Foreground="White" FontWeight="Bold"
-                        BorderThickness="0"/>
+                        BorderThickness="0" Click="QuanLyNhapKho_Click"/>
                 <TextBlock Text="Người B" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
@@ -34,26 +38,18 @@
             <StackPanel Margin="0,15">
                 <Button Content="📤 Quản lý xuất kho" Width="220" Height="50"
                         Background="#FB8C00" Foreground="White" FontWeight="Bold"
-                        BorderThickness="0"/>
+                        BorderThickness="0" Click="QuanLyXuatKho_Click"/>
                 <TextBlock Text="Người C" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
         </StackPanel>
 
-        <!-- Cột phải -->
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
-            <StackPanel Margin="0,15">
-                <Button Content="🛒 QL thông tin hàng hóa" Width="220" Height="50"
-                        Background="#8E24AA" Foreground="White" FontWeight="Bold"
-                        BorderThickness="0"/>
-                <TextBlock Text="Người D" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
-                           HorizontalAlignment="Center" Margin="0,5,0,0"/>
-            </StackPanel>
-
+        <!-- Cột Phải -->
+        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
             <StackPanel Margin="0,15">
                 <Button Content="📊 Theo dõi tồn kho" Width="220" Height="50"
                         Background="#3949AB" Foreground="White" FontWeight="Bold"
-                        BorderThickness="0"/>
+                        BorderThickness="0" Click="TheoDoiTonKho_Click"/>
                 <TextBlock Text="Người E" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
@@ -61,10 +57,23 @@
             <StackPanel Margin="0,15">
                 <Button Content="🔑 Đăng nhập/Đăng ký" Width="220" Height="50"
                         Background="#E53935" Foreground="White" FontWeight="Bold"
-                        BorderThickness="0"/>
+                        BorderThickness="0" Click="AuthWindow_Click"/>
                 <TextBlock Text="Người F" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
+
+            <StackPanel Margin="0,15">
+                <Button Content="🛒 QL thông tin hàng hóa" Width="220" Height="50"
+                        Background="#8E24AA" Foreground="White" FontWeight="Bold"
+                        BorderThickness="0" Click="QuanLyThongTinHangHoa_Click"/>
+                <TextBlock Text="Người D" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
+                           HorizontalAlignment="Center" Margin="0,5,0,0"/>
+            </StackPanel>
         </StackPanel>
+
+        <Button Grid.Row="1" Grid.ColumnSpan="2" Content="❌ Thoát" Width="200" Height="45"
+                Background="#212121" Foreground="White" FontWeight="Bold"
+                BorderThickness="0" Margin="0,30,0,0" HorizontalAlignment="Center"
+                Click="Exit_Click"/>
     </Grid>
 </Window>
