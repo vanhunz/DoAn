@@ -32,7 +32,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -40,16 +40,20 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Row="0" Grid.Column="0" Content="🔳" Margin="0,5"/>
-                        <Button Grid.Row="0" Grid.Column="1" Content="Cảnh báo tồn kho" />
+                        <Button Grid.Row="0" Grid.Column="1" Content="Cảnh báo tồn kho" Click="BtnCanhBaoTonKho_Click"/>
 
                         <Label Grid.Row="1" Grid.Column="0" Content="📦" Margin="0,5"/>
-                        <Button Grid.Row="1" Grid.Column="1" Content="Cảnh báo HSD" />
+                        <Button Grid.Row="1" Grid.Column="1" Content="Cảnh báo HSD" Click="BtnCanhBaoHSD_Click"/>
 
                         <Label Grid.Row="2" Grid.Column="0" Content="🛒" Margin="0,5"/>
-                        <Button Grid.Row="2" Grid.Column="1" Content="Xuất/Nhập dữ liệu" />
+                        <Button Grid.Row="2" Grid.Column="1" Content="Xuất .csv" Click="BtnXuat_Click"/>
 
                         <Label Grid.Row="3" Grid.Column="0" Content="👤" Margin="0,5"/>
-                        <Button Grid.Row="3" Grid.Column="1" Content="Báo cáo nhanh" />
+                        <Button Grid.Row="3" Grid.Column="1" Content="Báo cáo nhanh" Click="BtnBaoCao_Click"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Content="👤" Margin="0,5"/>
+                        <Button Grid.Row="4" Grid.Column="1" Content="Nhập bằng file" Click="BtnNhap_Click"/>
+
                     </Grid>
                 </GroupBox>
 
@@ -112,7 +116,7 @@
                                 Click="BtnSearch_Click"/>
                         <Button x:Name="btnBack" 
                                 Grid.Column="2" 
-                                Content="Quay lại" 
+                                Content="UpDate Dữ Liệu" 
                                 Margin="2" 
                                 Click="BtnBack_Click"/>
                     </Grid>
