@@ -51,7 +51,7 @@
                 <TextBox Grid.Row="3" Grid.Column="1" x:Name="txt_HoTen" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
 
                 <!-- CỘT PHẢI -->
-                <Label Grid.Row="0" Grid.Column="2" Content="Mã vai trò (1,2):" VerticalAlignment="Center"/>
+                <Label Grid.Row="0" Grid.Column="2" Content="Mã vai trò:" VerticalAlignment="Center"/>
                 <TextBox Grid.Row="0" Grid.Column="3" x:Name="txt_MaVaiTro" Margin="5" Background="#F6FDEB" BorderBrush="Black" Height="25"/>
 
                 <Label Grid.Row="1" Grid.Column="2" Content="Email:" VerticalAlignment="Center"/>
@@ -84,13 +84,25 @@
                      Foreground="#666" 
                      Background="#FCEFEF" 
                      BorderBrush="#F5B7B1"
-                     Text="Tìm kiếm theo mã hoặc tên"/>
+                     />
             <Button x:Name="btn_Search" Content="Tìm kiếm" Margin="0,0,15,0" Padding="12,6" 
-                    Background="#FFD3B6" Foreground="#333" BorderBrush="#F5B895" />
+                    Background="#FFD3B6" Foreground="#333" BorderBrush="#F5B895" Height="30" VerticalAlignment="Top" Click="Btn_Search_Click" />
             
         </StackPanel>
 
         <!-- DATAGRID -->
-        <DataGrid x:Name="dg_NguoiDung" Margin="10" Grid.ColumnSpan="2" Grid.Row="2" SelectionChanged="Dg_NguoiDung_SelectionChanged"/>
+        <DataGrid x:Name="dg_NguoiDung" Margin="10" Grid.ColumnSpan="2" Grid.Row="2" AutoGenerateColumns="False" SelectionChanged="Dg_NguoiDung_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã ND" Binding="{Binding MaND}" />
+                <DataGridTextColumn Header="Tên Đăng Nhập" Binding="{Binding TenDangNhap}" />
+                <DataGridTextColumn Header="Mật Khẩu" Binding="{Binding MatKhau}" />
+                <DataGridTextColumn Header="Họ Tên" Binding="{Binding HoTen}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Số Điện Thoại" Binding="{Binding SoDienThoai}" />
+                <DataGridTextColumn Header="Ngày Tạo" Binding="{Binding NgayTao}" />
+                <DataGridTextColumn Header="Mã Vai Trò" Binding="{Binding MaVaiTro}" />
+                <DataGridTextColumn Header="Vai Trò" Binding="{Binding VaiTro.TenVaiTro}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

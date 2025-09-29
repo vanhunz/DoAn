@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoAn"
         mc:Ignorable="d"
-        Title="QuanLyNhapKho" Height="550" Width="800" 
-        Loaded="Window_Loaded">
+        Title="Quản Lý Nhập Kho" Height="550" Width="800" 
+        Loaded="Window_Loaded"
+        Background="#f0f4f8">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="388*"/>
@@ -18,7 +19,16 @@
         </Grid.RowDefinitions>
 
         <!-- Nhập thông tin phiếu nhập -->
-        <GroupBox Header="Thông tin nhập kho" Margin="10,10,9.6,9.8" Grid.ColumnSpan="2">
+        <GroupBox Header="Thông tin nhập kho" Margin="10,10,9.6,9.8" Grid.ColumnSpan="2"
+                  Foreground="#2C3E50">
+            <GroupBox.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#ffffff" Offset="0"/>
+                    <GradientStop Color="#eaf3ff" Offset="1"/>
+                </LinearGradientBrush>
+            </GroupBox.Background>
+            <GroupBox.BorderBrush>#2980b9</GroupBox.BorderBrush>
+            <GroupBox.BorderThickness>2</GroupBox.BorderThickness>
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -32,32 +42,54 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Mã phiếu:" Grid.Row="0" Grid.Column="0" Margin="5"/>
-                <TextBox x:Name="txt_MaPhieuNhap" Grid.Row="0" Grid.Column="1" Margin="5"/>
+                <TextBlock Text="Mã phiếu:" Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+                <TextBox x:Name="txt_MaPhieuNhap" Grid.Row="0" Grid.Column="1" Margin="5" Padding="5"/>
 
-                <TextBlock Text="Mã hàng:" Grid.Row="1" Grid.Column="0" Margin="5"/>
-                <TextBox x:Name="txt_MaHangNhap" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                <TextBlock Text="Mã hàng:" Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+                <TextBox x:Name="txt_MaHangNhap" Grid.Row="1" Grid.Column="1" Margin="5" Padding="5"/>
 
-                <TextBlock Text="Số lượng:" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                <TextBox x:Name="txt_SoLuongNhap" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                <TextBlock Text="Số lượng:" Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+                <TextBox x:Name="txt_SoLuongNhap" Grid.Row="2" Grid.Column="1" Margin="5" Padding="5"/>
 
-                <TextBlock Text="Ngày nhập:" Grid.Row="3" Grid.Column="0" Margin="5"/>
-                <DatePicker x:Name="dt_NgayNhap" Grid.Row="3" Grid.Column="1" Margin="5"/>
+                <TextBlock Text="Ngày nhập:" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+                <DatePicker x:Name="dt_NgayNhap" Grid.Row="3" Grid.Column="1" Margin="5" Padding="5"/>
 
-                <TextBlock Text="Đơn giá:" Grid.Row="4" Grid.Column="0" Margin="5"/>
-                <TextBox x:Name="txt_DonGiaNhap" Grid.Row="4" Grid.Column="1" Margin="5"/>
+                <TextBlock Text="Đơn giá:" Grid.Row="4" Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+                <TextBox x:Name="txt_DonGiaNhap" Grid.Row="4" Grid.Column="1" Margin="5" Padding="5"/>
             </Grid>
         </GroupBox>
 
         <!-- Các nút chức năng -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="147,220,146.6,9.8" Grid.ColumnSpan="2">
-            <Button x:Name="Btn_Luu" Content="Lưu" Width="100" Margin="10" Click="Btn_Luu_Click"/>
-            <Button x:Name="Btn_Sua" Content="Sửa" Width="100" Margin="10,0,10,10.2" Height="19" VerticalAlignment="Bottom" Click="Btn_Sua_Click"/>
-            <Button x:Name="Btn_Xoa" Content="Xoá" Width="100" Margin="10" Click="Btn_Xoa_Click"/>
-            <Button x:Name="Btn_TimKiem" Content="Tìm kiếm" Width="100" Margin="10"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" 
+                    Margin="0,220,0,10" Grid.ColumnSpan="2">
+            <Button x:Name="Btn_Luu" Content="Lưu" Width="100" Height="35" Margin="10"
+                    Background="#27ae60" Foreground="White" FontWeight="Bold"
+                    BorderThickness="0" Click="Btn_Luu_Click" Cursor="Hand"/>
+            <Button x:Name="Btn_Sua" Content="Sửa" Width="100" Height="35" Margin="10"
+                    Background="#2980b9" Foreground="White" FontWeight="Bold"
+                    BorderThickness="0" Click="Btn_Sua_Click" Cursor="Hand"/>
+            <Button x:Name="Btn_Xoa" Content="Xoá" Width="100" Height="35" Margin="10"
+                    Background="#e74c3c" Foreground="White" FontWeight="Bold"
+                    BorderThickness="0" Click="Btn_Xoa_Click" Cursor="Hand"/>
+            <Button x:Name="Btn_TimKiem" Content="Tìm kiếm" Width="100" Height="35" Margin="10"
+                    Background="#f39c12" Foreground="White" FontWeight="Bold"
+                    BorderThickness="0" Cursor="Hand"/>
         </StackPanel>
 
         <!-- Bảng hiển thị dữ liệu -->
-        <DataGrid x:Name="DG_NhapKho" Grid.Row="1" Margin="10,10.2,9.6,10" Grid.ColumnSpan="2" SelectionChanged="DG_NhapKho_SelectionChanged"/>
+        <DataGrid x:Name="DG_NhapKho" Grid.Row="1" Margin="10,10,9.6,10" Grid.ColumnSpan="2"
+                  AutoGenerateColumns="False" 
+                  SelectionChanged="DG_NhapKho_SelectionChanged"
+                  Background="White" BorderBrush="#2980b9" BorderThickness="1"
+                  RowBackground="White" AlternatingRowBackground="#ecf6ff"
+                  GridLinesVisibility="Horizontal" HeadersVisibility="Column"
+                  FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã Phiếu" Binding="{Binding MaPhieuNhap}" />
+                <DataGridTextColumn Header="Mã Hàng" Binding="{Binding MaHang}" />
+                <DataGridTextColumn Header="Số Lượng" Binding="{Binding SoLuong}" />
+                <DataGridTextColumn Header="Đơn Giá" Binding="{Binding DonGia}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

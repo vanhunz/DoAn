@@ -44,5 +44,9 @@ namespace DoAn.ViewModel
         {
             dg.ItemsSource = db.NguoiDung.ToList();
         }
+        public List<Model.NguoiDung> TimKiemNguoiDung(int maND)
+        {
+            return db.NguoiDung.Where(nd => nd.MaND == maND).ToList();
+        }
     }
 }

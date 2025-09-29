@@ -97,6 +97,34 @@ namespace DoAn.View
             txt_SoDienThoai.Text = nd.SoDienThoai;
             date_NgayTao.SelectedDate = nd.NgayTao;
         }
-        
+
+        private void Btn_Search_Click(object sender, RoutedEventArgs e)
+        {
+            string searchText = SearchBox.Text.Trim();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                ndmd.LoadND(dg_NguoiDung);
+                return;
+            }
+
+            if (int.TryParse(searchText, out int maND))
+            {
+                var ketQua = ndmd.TimKiemNguoiDung(maND);
+                if (ketQua.Any())
+                {
+                    dg_NguoiDung.ItemsSource = ketQua;
+                }
+                else
+                {
+                    MessageBox.Show($"Không có người có mã là {maND}");
+                    dg_NguoiDung.ItemsSource = new List<Model.NguoiDung>();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập mã người dùng hợp lệ (số nguyên).");
+                ndmd.LoadND(dg_NguoiDung);
+            }
+        }
     }
 }

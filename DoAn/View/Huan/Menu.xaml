@@ -19,9 +19,9 @@
         <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" >
             <StackPanel Margin="0,15">
                 <Button Content="👤 Quản lý người dùng" Width="220" Height="50" 
-                        Background="#1E88E5" Foreground="White" FontWeight="Bold"
+                        Background="#FE98A3" Foreground="White" FontWeight="Bold"
                         BorderThickness="0" Click="QuanLyNguoiDung_Click"/>
-                <TextBlock Text="Người A" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
+                <TextBlock Text="Lê Thị Thùy Trang" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
 
@@ -29,7 +29,7 @@
                 <Button Content="📥 Quản lý nhập kho" Width="220" Height="50"
                         Background="#43A047" Foreground="White" FontWeight="Bold"
                         BorderThickness="0" Click="QuanLyNhapKho_Click"/>
-                <TextBlock Text="Người B" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
+                <TextBlock Text="Ngô Phi Hậu" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
 
@@ -37,7 +37,7 @@
                 <Button Content="📤 Quản lý xuất kho" Width="220" Height="50"
                         Background="#FB8C00" Foreground="White" FontWeight="Bold"
                         BorderThickness="0" Click="QuanLyXuatKho_Click"/>
-                <TextBlock Text="Người C" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
+                <TextBlock Text="Nguyễn Thị Thu Hà" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
         </StackPanel>
@@ -46,7 +46,7 @@
                 <Button Content="📊 Theo dõi tồn kho" Width="220" Height="50"
                         Background="#3949AB" Foreground="White" FontWeight="Bold"
                         BorderThickness="0" Click="TheoDoiTonKho_Click"/>
-                <TextBlock Text="Người E" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
+                <TextBlock Text="Phạm Thị Sâm" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
 
@@ -54,7 +54,7 @@
                 <Button Content="🔑 Đăng nhập/Đăng ký" Width="220" Height="50"
                         Background="#E53935" Foreground="White" FontWeight="Bold"
                         BorderThickness="0" Click="AuthWindow_Click"/>
-                <TextBlock Text="Người F" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
+                <TextBlock Text="Word Together" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
 
@@ -62,7 +62,7 @@
                 <Button Content="🛒 QL thông tin hàng hóa" Width="220" Height="50"
                         Background="#8E24AA" Foreground="White" FontWeight="Bold"
                         BorderThickness="0" Click="QuanLyThongTinHangHoa_Click"/>
-                <TextBlock Text="Người D" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
+                <TextBlock Text="Võ Văn Huân" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
         </StackPanel>
