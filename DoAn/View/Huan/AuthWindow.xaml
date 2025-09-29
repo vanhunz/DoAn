@@ -1,0 +1,131 @@
+﻿<Window x:Class="DoAn.View.Huan.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:DoAn.ViewModel"
+        Title="Authentication" Height="480" Width="820"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <vm:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+            <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <vm:AuthViewModel/>
+    </Window.DataContext>
+
+    <Grid Background="AliceBlue">
+
+        <Grid Visibility="{Binding CurrentPage,
+                           Converter={StaticResource StringToVisibilityConverter},
+                           ConverterParameter=Login}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Margin="0,20">
+                <TextBlock Text="Đăng nhập" FontSize="22" FontWeight="Bold"
+                           Margin="0 0 0 20" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="Tên đăng nhập" Width="120"/>
+                    <TextBox Width="200"
+                             Text="{Binding LoginUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="Mật khẩu" Width="120"/>
+                    <PasswordBox x:Name="LoginPasswordBox" Width="200"
+                                 PasswordChanged="LoginPasswordBox_PasswordChanged"/>
+                </StackPanel>
+
+                <Button Content="Đăng nhập" Command="{Binding LoginCommand}"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="Quên mật khẩu" Command="{Binding ShowForgotCommand}"/>
+                    <Button Content="Đăng ký" Command="{Binding ShowRegisterCommand}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Visibility="{Binding CurrentPage,
+                           Converter={StaticResource StringToVisibilityConverter},
+                           ConverterParameter=Forgot}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="420" Margin="0,20">
+                <TextBlock Text="Quên mật khẩu" FontSize="22" FontWeight="Bold"
+                           Margin="0 0 0 20" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="Tên đăng nhập" Width="140"/>
+                    <TextBox Width="240"
+                             Text="{Binding ForgotUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="Email hoặc SĐT" Width="140"/>
+                    <TextBox Width="240"
+                             Text="{Binding ForgotContact, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <Button Content="Xác minh" Command="{Binding CheckForgotCommand}"/>
+                <StackPanel Visibility="{Binding ShowResetFields, Converter={StaticResource BoolToVis}}">
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <Label Content="Mật khẩu mới" Width="140"/>
+                        <PasswordBox x:Name="NewPassBox" Width="240"
+                                     PasswordChanged="NewPassBox_PasswordChanged"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 5">
+                        <Label Content="Xác nhận MK" Width="140"/>
+                        <PasswordBox x:Name="ConfirmPassBox" Width="240"
+                                     PasswordChanged="ConfirmPassBox_PasswordChanged"/>
+                    </StackPanel>
+                    <Button Content="Đổi mật khẩu" Command="{Binding ResetPasswordCommand}"/>
+                </StackPanel>
+
+                <Button Content="Quay lại" Command="{Binding ShowLoginCommand}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Visibility="{Binding CurrentPage,
+                           Converter={StaticResource StringToVisibilityConverter},
+                           ConverterParameter=Register}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="420" Margin="0,20">
+                <TextBlock Text="Đăng ký" FontSize="22" FontWeight="Bold"
+                           Margin="0 0 0 20" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="Tên đăng nhập" Width="140"/>
+                    <TextBox Width="240"
+                             Text="{Binding RegUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="Mật khẩu" Width="140"/>
+                    <PasswordBox x:Name="RegisterPasswordBox" Width="240"
+                                 PasswordChanged="RegisterPasswordBox_PasswordChanged"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="Họ tên" Width="140"/>
+                    <TextBox Width="240"
+                             Text="{Binding RegFullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="Email" Width="140"/>
+                    <TextBox Width="240"
+                             Text="{Binding RegEmail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 5">
+                    <Label Content="SĐT" Width="140"/>
+                    <TextBox Width="240"
+                             Text="{Binding RegPhone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <Button Content="Tạo tài khoản" Command="{Binding RegisterCommand}"/>
+                <Button Content="Quay lại" Command="{Binding ShowLoginCommand}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
