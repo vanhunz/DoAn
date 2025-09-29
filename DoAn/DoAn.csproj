@@ -94,7 +94,7 @@
       <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -157,6 +157,7 @@
     <Compile Include="ViewModel\QuanLyXuatKho.cs" />
     <Compile Include="ViewModel\Hunz\RelayCommand.cs" />
     <Compile Include="ViewModel\Hunz\StringToVisibilityConverter.cs" />
+    <Compile Include="ViewModel\TheoDoiTonKhoViewModel.cs" />
     <Compile Include="View\Huan\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
@@ -305,12 +306,12 @@
       <DependentUpon>ThucPhamModel.edmx</DependentUpon>
       <LastGenOutput>ThucPhamModel.cs</LastGenOutput>
     </Content>
-    <Content Include="QLHangHoa.mdf">
+    <Content Include="QLThucPham.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="QLHangHoa_log.ldf">
+    <Content Include="QLThucPham_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QLHangHoa.mdf</DependentUpon>
+      <DependentUpon>QLThucPham.mdf</DependentUpon>
     </Content>
     <!-- Fixed section -->
   </ItemGroup>

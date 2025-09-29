@@ -37,7 +37,7 @@ namespace DoAn.View.Huan
 
         private void TheoDoiTonKho_Click(object sender, RoutedEventArgs e)
         {
-            //new TheoDoiTonKho().Show();
+            new TheoDoiTonKho().Show();
         }
 
         private void AuthWindow_Click(object sender, RoutedEventArgs e)

@@ -48,8 +48,11 @@ namespace DoAn.ViewModel
             {
                 MaHang = h.MaHang,
                 TenHang = h.TenHang,
+                GiaNhap = h.GiaNhap ?? 0,   // DECIMAL có thể nullable
+                GiaXuat = h.GiaXuat ?? 0,   // DECIMAL có thể nullable
                 SoLuong = h.SoLuongTon ?? 0,
-                DonVi = h.DonVi,
+                NSX = h.NSX,
+                HSD = h.HSD,
                 TrangThai = (h.SoLuongTon ?? 0) == 0 ? "Hết hàng"
                            : (h.SoLuongTon ?? 0) <= 5 ? "Sắp hết"
                            : "Còn hàng"
@@ -61,6 +64,7 @@ namespace DoAn.ViewModel
             SapHetHang = DanhSachSanPham.Count(x => x.TrangThai == "Sắp hết");
             HetHang = DanhSachSanPham.Count(x => x.TrangThai == "Hết hàng");
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
@@ -74,5 +78,9 @@ namespace DoAn.ViewModel
         public int SoLuong { get; set; }
         public string DonVi { get; set; }
         public string TrangThai { get; set; }
+        public decimal GiaNhap { get; internal set; }
+        public decimal GiaXuat { get; internal set; }
+        public DateTime? NSX { get; internal set; }
+        public DateTime? HSD { get; internal set; }
     }
 }
