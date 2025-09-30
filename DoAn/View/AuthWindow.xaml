@@ -1,4 +1,4 @@
-﻿<Window x:Class="DoAn.View.Huan.AuthWindow"
+﻿<Window x:Class="DoAn.View.AuthWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:DoAn.ViewModel"
@@ -50,8 +50,6 @@
     <Window.DataContext>
         <vm:AuthViewModel/>
     </Window.DataContext>
-
-    <!-- Background Gradient -->
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">

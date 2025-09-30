@@ -94,7 +94,7 @@
       <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -149,22 +149,22 @@
     <Compile Include="Model\PhieuXuat.cs">
       <DependentUpon>ThucPhamModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\Hunz\AuthViewModel.cs" />
-    <Compile Include="ViewModel\Hunz\BaseViewModel.cs" />
+    <Compile Include="ViewModel\AuthViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\NguoiDungModelView.cs" />
     <Compile Include="ViewModel\NhapKhoViewModel.cs" />
-    <Compile Include="ViewModel\Hunz\QLHangHoa.cs" />
+    <Compile Include="ViewModel\QLHangHoa.cs" />
     <Compile Include="ViewModel\QuanLyXuatKho.cs" />
-    <Compile Include="ViewModel\Hunz\RelayCommand.cs" />
-    <Compile Include="ViewModel\Hunz\StringToVisibilityConverter.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\StringToVisibilityConverter.cs" />
     <Compile Include="ViewModel\TheoDoiTonKhoViewModel.cs" />
-    <Compile Include="View\Huan\AuthWindow.xaml.cs">
+    <Compile Include="View\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Huan\Menu.xaml.cs">
+    <Compile Include="View\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Huan\QuanLyThongTinHangHoa.xaml.cs">
+    <Compile Include="View\QuanLyThongTinHangHoa.xaml.cs">
       <DependentUpon>QuanLyThongTinHangHoa.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyNhapKho.xaml.cs">
@@ -197,36 +197,28 @@
     <Compile Include="View\QuanLyNguoiDung.xaml.cs">
       <DependentUpon>QuanLyNguoiDung.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\Huan\AuthWindow.xaml">
+    <Page Include="View\AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Huan\Menu.xaml">
+    <Page Include="View\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Huan\QuanLyThongTinHangHoa.xaml">
+    <Page Include="View\QuanLyThongTinHangHoa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Huan\Styles1.xaml">
+    <Page Include="View\Styles1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Huan\Styles2.xaml">
+    <Page Include="View\Styles2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\QuanLyNhapKho.xaml">

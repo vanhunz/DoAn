@@ -70,12 +70,12 @@ namespace DoAn.ViewModel
                     // Mở Menu.xaml
                     Application.Current.Dispatcher.Invoke(() =>
                     {
-                        var menu = new DoAn.View.Huan.Menu();
+                        var menu = new DoAn.View.Menu();
                         menu.Show();
 
                         foreach (Window w in Application.Current.Windows)
                         {
-                            if (w is DoAn.View.Huan.AuthWindow)
+                            if (w is DoAn.View.AuthWindow)
                             {
                                 w.Close();
                                 break;

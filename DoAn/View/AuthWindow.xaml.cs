@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using DoAn.ViewModel;
 
-namespace DoAn.View.Huan
+namespace DoAn.View
 {
     public partial class AuthWindow : Window
     {

@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using DoAn.View;      
-using DoAn.View.Huan;
-namespace DoAn.View.Huan
+namespace DoAn.View
 {
     public partial class Menu : Window
     {
@@ -9,12 +8,6 @@ namespace DoAn.View.Huan
         {
             InitializeComponent();
         }
-
-        private void MainWindow_Click(object sender, RoutedEventArgs e)
-        {
-            new MainWindow().Show();
-        }
-
         private void QuanLyNguoiDung_Click(object sender, RoutedEventArgs e)
         {
             new QuanLyNguoiDung().Show();

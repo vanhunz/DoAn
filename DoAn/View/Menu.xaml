@@ -1,4 +1,4 @@
-﻿<Window x:Class="DoAn.View.Huan.Menu"
+﻿<Window x:Class="DoAn.View.Menu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Quản lý kho" Height="600" Width="800"
@@ -62,7 +62,7 @@
                 <Button Content="🛒 QL thông tin hàng hóa" Width="220" Height="50"
                         Background="#8E24AA" Foreground="White" FontWeight="Bold"
                         BorderThickness="0" Click="QuanLyThongTinHangHoa_Click"/>
-                <TextBlock Text="Võ Văn Huân" Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
+                <TextBlock Text="Võ Văn Huân " Foreground="#6A1B9A" FontStyle="Italic" FontSize="14"
                            HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
         </StackPanel>
